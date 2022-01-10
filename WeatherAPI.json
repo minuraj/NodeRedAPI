@@ -1,1 +1,110 @@
-[]
+[
+    {
+        "id": "b84bce9ac28a34aa",
+        "type": "tab",
+        "label": "WeatherAPI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7e8fa72c87f09ff6",
+        "type": "inject",
+        "z": "b84bce9ac28a34aa",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "1b965f3e6d88bbc9"
+            ]
+        ]
+    },
+    {
+        "id": "1b965f3e6d88bbc9",
+        "type": "http request",
+        "z": "b84bce9ac28a34aa",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://api.openweathermap.org/data/2.5/weather?q=Dubai,UAE&appid=3541ebe34b5a787ac3e60d88a6515841",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "19fad70e6a3e540b",
+                "b3c9171253f1da78"
+            ]
+        ]
+    },
+    {
+        "id": "19fad70e6a3e540b",
+        "type": "debug",
+        "z": "b84bce9ac28a34aa",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b3c9171253f1da78",
+        "type": "json",
+        "z": "b84bce9ac28a34aa",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 200,
+        "wires": [
+            [
+                "a3aa8ecebda12657"
+            ]
+        ]
+    },
+    {
+        "id": "a3aa8ecebda12657",
+        "type": "debug",
+        "z": "b84bce9ac28a34aa",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 200,
+        "wires": []
+    }
+]
